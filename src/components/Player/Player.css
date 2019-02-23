@@ -1,0 +1,7 @@
+.player {
+  display: block;
+  width: 100vw;
+  height: 75vw;
+  max-height: 67vh;
+  background-color: var(--color-black);
+}

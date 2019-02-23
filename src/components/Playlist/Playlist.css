@@ -1,0 +1,12 @@
+.playlist__title {
+  margin-top: 0;
+}
+
+.playlist__list {
+  list-style-type: none;
+  padding-left: 0;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  background-color: var(--color-white);
+}

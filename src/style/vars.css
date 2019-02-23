@@ -1,0 +1,14 @@
+:root {
+  --color-white: #FFF;
+  --color-off-white: #FCFCFC;
+  --color-gray: #555;
+  --color-black: #000;
+  --color-black-semi-transparent: rgba(0, 0, 0, 0.5);
+  --color-red: #A00;
+  --color-app-bg: #EEE;
+  --color-action: #4682B4;
+  --color-action-text: #FFF;
+  --color-border: #CCC;
+
+  --border-radius: 0.5rem;
+}

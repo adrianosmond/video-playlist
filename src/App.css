@@ -1,0 +1,19 @@
+@import './style/vars.css';
+@import './style/normalise.css';
+@import './style/global.css';
+
+.app {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-app-bg);
+  align-items: center;
+}
+
+.app__body {
+  flex-grow: 1;
+  width: 100%;
+  padding: 1rem;
+  max-width: 750px;
+}
