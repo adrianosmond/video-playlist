@@ -1,41 +1,6 @@
-/*
-[
-  {
-    artist: 'Meccano',
-    title: 'Helicopter',
-    url: 'http://techslides.com/demos/sample-videos/small.mp4',
-    isBroken: false,
-  },
-  {
-    artist: 'Dolby',
-    title: 'Canyon',
-    url: 'http://mirrors.standaloneinstaller.com/video-sample/dolbycanyon.m4v',
-    isBroken: false,
-  },
-  {
-    artist: 'Mazwai',
-    title: 'Lillies',
-    url: 'http://mazwai.com/system/posts/videos/000/000/208/preview_mp4_2/whitelilies.mp4',
-    isBroken: false,
-  },
-]
-*/
 
 const INITIAL_STATE = {
-  playlist: [
-    {
-      artist: 'Meccano',
-      title: 'Helicopter',
-      url: 'http://techslides.com/demos/sample-videos/small.mp4',
-      isBroken: false,
-    },
-    {
-      artist: 'Dolby',
-      title: 'Canyon',
-      url: 'http://mirrors.standaloneinstaller.com/video-sample/dolbycanyon.m4v',
-      isBroken: true,
-    },
-  ],
+  playlist: [],
   playingIdx: 0,
 };
 
@@ -114,9 +79,11 @@ export default function playlistReducer(state = INITIAL_STATE, action) {
       };
 
     case actionTypes.REMOVE_VIDEO_FROM_PLAYLIST:
+      const remIdx = state.playlist.findIndex(item => item.url === action.payload.url);
       return {
         ...state,
         playlist: state.playlist.filter(item => item.url !== action.payload.url),
+        playingIdx: (remIdx >= 0 && remIdx <= state.playingIdx) ? state.playingIdx - 1 : state.playingIdx,
       };
 
     case actionTypes.SET_VIDEO_BROKEN_STATUS:

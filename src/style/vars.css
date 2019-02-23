@@ -1,14 +1,14 @@
 :root {
   --color-white: #FFF;
-  --color-off-white: #FCFCFC;
+  --color-off-white: #EEEEEE;
+  --color-light-gray: #CCCCCC;
   --color-gray: #555;
-  --color-black: #000;
+  --color-dark-gray: #333;
+  --color-black: #111;
+  --color-white-super-transparent: rgba(255, 255, 255, 0.1);
+  --color-white-semi-transparent: rgba(255, 255, 255, 0.5);
   --color-black-semi-transparent: rgba(0, 0, 0, 0.5);
   --color-red: #A00;
-  --color-app-bg: #EEE;
-  --color-action: #4682B4;
-  --color-action-text: #FFF;
-  --color-border: #CCC;
 
   --border-radius: 0.5rem;
 }

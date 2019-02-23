@@ -4,4 +4,5 @@
   height: 75vw;
   max-height: 67vh;
   background-color: var(--color-black);
+  box-shadow: 0 2px 0 var(--color-white-super-transparent);
 }

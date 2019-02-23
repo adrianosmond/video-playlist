@@ -18,7 +18,9 @@ import './App.css';
 class App extends Component {
   videoPlay = () => {
     const { currentVideo, setVideoBroken } = this.props;
-    setVideoBroken(currentVideo.url, false);
+    if (currentVideo.isBroken) {
+      setVideoBroken(currentVideo.url, false);
+    }
   }
 
   videoEnded = () => {
@@ -53,9 +55,7 @@ class App extends Component {
             playItem={playVideo}
             removeItem={removeVideo}
           />
-          <AddToPlaylist
-            onAddVideo={addVideo}
-          />
+          <AddToPlaylist onAddVideo={addVideo} />
         </div>
       </div>
     );

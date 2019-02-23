@@ -6,10 +6,11 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: var(--color-black);
 }
 
 .playlist-item--current {
-  background-color: var(--color-off-white);
+  background-color: var(--color-white);
 }
 
 .playlist-item--broken {
@@ -17,7 +18,7 @@
 }
 
 .playlist-item:not(:first-child) {
-  border-top: 1px solid var(--color-border);
+  border-top: 1px solid var(--color-black);
 }
 
 .playlist-item:not(.playlist-item--current) {

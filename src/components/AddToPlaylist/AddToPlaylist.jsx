@@ -30,7 +30,7 @@ const AddToPlaylist = ({ onAddVideo }) => {
 
   return (
     <div className="add-to-playlist">
-      <h3>Add to playlist</h3>
+      <h3 className="add-to-playlist__title">Add to playlist</h3>
       <form
         onSubmit={onFormSubmit}
         className="add-to-playlist__form"
@@ -60,7 +60,7 @@ const AddToPlaylist = ({ onAddVideo }) => {
             type="url"
           />
         </FormRow>
-        <button className="form__button" type="submit">Add to playlist</button>
+        <button className="add-to-playlist__button" type="submit">Add to playlist</button>
       </form>
     </div>
   )
