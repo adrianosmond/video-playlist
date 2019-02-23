@@ -1,0 +1,19 @@
+.button {
+  appearance: none;
+  margin: 0;
+  margin-top: 0.5rem;
+  padding: 0;
+  height: 2.5rem;
+  width: 100%;
+  border: 0;
+  outline: 0;
+  border-radius: var(--border-radius);
+  border-bottom: 0.25rem solid var(--color-black-semi-transparent);
+  background-color: var(--color-gray);
+  color: var(--color-action-text);
+}
+
+.button:active {
+  border: 0.125rem solid var(--color-black-semi-transparent);
+  padding-bottom: 1px
+}

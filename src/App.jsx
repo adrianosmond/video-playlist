@@ -9,7 +9,7 @@ import {
   setVideoBrokenStatus,
 } from './state/reducers/playlistReducer';
 
-import AddToPlaylist from './components/AddToPlaylist/AddToPlaylist';
+import AddToPlaylist from './containers/AddToPlaylist/AddToPlaylist';
 import Player from './components/Player/Player';
 import Playlist from './components/Playlist/Playlist';
 
