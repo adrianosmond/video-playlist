@@ -1,6 +1,6 @@
 # Video player
 
-This is an HTML5 video player which will let you make a playlist of videos which it will continuously loop through.
+This is an HTML5 video player which will let you make a playlist of videos which it will continuously loop through. [Visible here](https://video-playlist.netlify.com)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
