@@ -41,7 +41,7 @@ const AddToPlaylist = ({ onAddVideo }) => {
           label="URL"
           value={url}
           required
-          pattern="http[s]?://.*[.](mp4|m4v|avi|ogv)"
+          pattern="http[s]?://.*[.](mp4|m4v|ogv)"
           onChange={e => setUrl(e.target.value)}
           type="url"
         />

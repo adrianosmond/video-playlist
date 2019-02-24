@@ -12,7 +12,7 @@ const Playlist = ({
     { playlist.length === 0 ? (
       <p>
         There are currently no videos in your playlist.
-        Add an mp4 or m4v file to start playing.
+        Add an mp4, m4v or ogv file to start playing.
       </p>
     ) : (
       <ul className="playlist__list">
