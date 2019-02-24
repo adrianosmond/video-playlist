@@ -5,12 +5,14 @@ import IconEqualiser from '../IconEqualiser/IconEqualiser';
 
 import './PlaylistItem.css';
 
-const PlaylistItem = ({ position, artist, title, current, playItem, removeItem, isBroken }) => (
+const PlaylistItem = ({
+  position, artist, title, current, playItem, removeItem, isBroken,
+}) => (
   <li onClick={playItem}
     className={classNames({
-    'playlist-item': true,
-    'playlist-item--current': current,
-    'playlist-item--broken': isBroken,
+      'playlist-item': true,
+      'playlist-item--current': current,
+      'playlist-item--broken': isBroken,
     })}
   >
     <span className="playlist-item__position">

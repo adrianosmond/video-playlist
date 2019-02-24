@@ -2,7 +2,9 @@ import React from 'react';
 
 import './Player.css';
 
-const Player = ({ url, onEnded, onPlay, onError, loop }) => (
+const Player = ({
+  url, onEnded, onPlay, onError, loop,
+}) => (
   <video
     className="player"
     controls
@@ -14,6 +16,6 @@ const Player = ({ url, onEnded, onPlay, onError, loop }) => (
     key={url}>
     <source src={url} />
   </video>
-)
+);
 
 export default Player;

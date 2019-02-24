@@ -2,7 +2,9 @@ import React from 'react';
 
 import './FormInput.css';
 
-const FormInput = ({ label, value, onChange, required, pattern, type='text'}) => (
+const FormInput = ({
+  label, value, onChange, required, pattern, type = 'text',
+}) => (
   <label className="form-input">
     <span className="form-input__label">{label}:</span>
     <input
@@ -12,7 +14,8 @@ const FormInput = ({ label, value, onChange, required, pattern, type='text'}) =>
       onChange={onChange}
       required={required}
       pattern={pattern}
-      value={value} />
+      value={value}
+    />
   </label>
 );
 

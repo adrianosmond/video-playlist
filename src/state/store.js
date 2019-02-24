@@ -8,6 +8,6 @@ function configureStore(initialState) {
     }),
     initialState,
   );
-};
+}
 
 export default configureStore();

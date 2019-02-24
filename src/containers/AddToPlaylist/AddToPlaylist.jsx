@@ -9,9 +9,9 @@ const AddToPlaylist = ({ onAddVideo }) => {
   const [title, setTitle] = useState('');
   const [url, setUrl] = useState('');
 
-  const onFormSubmit = evt => {
+  const onFormSubmit = (evt) => {
     evt.preventDefault();
-    onAddVideo(artist, title, url)
+    onAddVideo(artist, title, url);
     setArtist('');
     setTitle('');
     setUrl('');

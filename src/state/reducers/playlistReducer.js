@@ -19,7 +19,7 @@ export const addVideoToPlaylist = (artist, title, url) => ({
       artist,
       title,
       url,
-    }
+    },
   },
 });
 
@@ -52,7 +52,7 @@ export const setVideoBrokenStatus = (url, isBroken) => ({
 
 export default function playlistReducer(state = INITIAL_STATE, action) {
   switch (action.type) {
-    case actionTypes.NEXT_VIDEO_IN_PLAYLIST:
+    case actionTypes.NEXT_VIDEO_IN_PLAYLIST: {
       let index = state.playingIdx;
       index += 1;
       if (index >= state.playlist.length) {
@@ -62,6 +62,7 @@ export default function playlistReducer(state = INITIAL_STATE, action) {
         ...state,
         playingIdx: index,
       };
+    }
 
     case actionTypes.PLAY_VIDEO_BY_IDX:
       return {
@@ -78,18 +79,20 @@ export default function playlistReducer(state = INITIAL_STATE, action) {
         ],
       };
 
-    case actionTypes.REMOVE_VIDEO_FROM_PLAYLIST:
+    case actionTypes.REMOVE_VIDEO_FROM_PLAYLIST: {
       const remIdx = state.playlist.findIndex(item => item.url === action.payload.url);
       return {
         ...state,
         playlist: state.playlist.filter(item => item.url !== action.payload.url),
-        playingIdx: (remIdx >= 0 && remIdx <= state.playingIdx) ? state.playingIdx - 1 : state.playingIdx,
+        playingIdx: (remIdx >= 0 && remIdx <= state.playingIdx)
+          ? state.playingIdx - 1 : state.playingIdx,
       };
+    }
 
     case actionTypes.SET_VIDEO_BROKEN_STATUS:
       return {
         ...state,
-        playlist: state.playlist.map(item => {
+        playlist: state.playlist.map((item) => {
           if (item.url !== action.payload.url) {
             return item;
           }
@@ -103,4 +106,4 @@ export default function playlistReducer(state = INITIAL_STATE, action) {
     default:
       return state;
   }
-};
+}

@@ -36,7 +36,7 @@ class App extends Component {
 
   render() {
     const {
-      playlist, playingIdx, playVideo, addVideo, removeVideo, currentVideo
+      playlist, playingIdx, playVideo, addVideo, removeVideo, currentVideo,
     } = this.props;
 
     return (
@@ -66,7 +66,7 @@ const mapStateToProps = state => ({
   playingIdx: state.playlist.playingIdx,
   playlist: state.playlist.playlist,
   currentVideo: state.playlist.playlist[state.playlist.playingIdx] || {},
-})
+});
 
 const mapDispatchToProps = dispatch => ({
   addVideo: (artist, title, url) => dispatch(addVideoToPlaylist(artist, title, url)),
@@ -74,6 +74,6 @@ const mapDispatchToProps = dispatch => ({
   playVideo: idx => dispatch(playVideoByIdx(idx)),
   removeVideo: url => dispatch(removeVideoFromPlaylist(url)),
   setVideoBroken: (url, isBroken) => dispatch(setVideoBrokenStatus(url, isBroken)),
-})
+});
 
-export default connect(mapStateToProps,mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
