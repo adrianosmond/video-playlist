@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Form from '../../components/Form/Form';
-import FormRow from '../../components/FormRow/FormRow';
-import FormInput from '../../components/FormInput/FormInput';
+import Form from 'components/Form/Form';
+import FormRow from 'components/FormRow/FormRow';
+import FormInput from 'components/FormInput/FormInput';
 
 const AddToPlaylist = ({ onAddVideo }) => {
   const [artist, setArtist] = useState('');

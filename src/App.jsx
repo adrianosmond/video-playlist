@@ -7,13 +7,13 @@ import {
   playVideoByIdx,
   removeVideoFromPlaylist,
   setVideoBrokenStatus,
-} from './state/reducers/playlistReducer';
+} from 'state/reducers/playlistReducer';
 
-import AddToPlaylist from './containers/AddToPlaylist/AddToPlaylist';
-import Player from './components/Player/Player';
-import Playlist from './components/Playlist/Playlist';
+import AddToPlaylist from 'containers/AddToPlaylist/AddToPlaylist';
+import Player from 'components/Player/Player';
+import Playlist from 'components/Playlist/Playlist';
 
-import './App.css';
+import 'App.css';
 
 class App extends Component {
   videoPlay = () => {

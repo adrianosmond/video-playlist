@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 
-import IconEqualiser from '../IconEqualiser/IconEqualiser';
+import IconEqualiser from 'components/IconEqualiser';
 
 import './PlaylistItem.css';
 
