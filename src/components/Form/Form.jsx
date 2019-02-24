@@ -13,7 +13,7 @@ const Form = ({ button, onFormSubmit, children }) => (
     >
       {children}
       <div className="form__button">
-        <Button>{button}</Button>
+        <Button type="submit">{button}</Button>
       </div>
     </form>
   </div>

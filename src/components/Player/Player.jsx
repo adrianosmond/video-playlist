@@ -13,7 +13,8 @@ const Player = ({
     onEnded={onEnded}
     onError={onError}
     onPlay={onPlay}
-    key={url}>
+    key={url}
+  >
     <source src={url} />
   </video>
 );

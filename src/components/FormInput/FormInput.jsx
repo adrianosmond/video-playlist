@@ -6,7 +6,9 @@ const FormInput = ({
   label, value, onChange, required, pattern, type = 'text',
 }) => (
   <label className="form-input">
-    <span className="form-input__label">{label}:</span>
+    <span className="form-input__label">
+      {`${label}:`}
+    </span>
     <input
       className="form-input__input"
       type={type}
