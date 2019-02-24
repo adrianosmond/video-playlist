@@ -24,6 +24,7 @@ const AddToPlaylist = ({ onAddVideo }) => {
         <FormInput
           label="Artist"
           value={artist}
+          maxLength={100}
           required
           onChange={e => setArtist(e.target.value)}
         />
@@ -32,6 +33,7 @@ const AddToPlaylist = ({ onAddVideo }) => {
         <FormInput
           label="Title"
           value={title}
+          maxLength={100}
           required
           onChange={e => setTitle(e.target.value)}
         />

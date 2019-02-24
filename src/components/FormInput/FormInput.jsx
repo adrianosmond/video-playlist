@@ -3,7 +3,7 @@ import React from 'react';
 import './FormInput.css';
 
 const FormInput = ({
-  label, value, onChange, required, pattern, type = 'text',
+  label, value, onChange, required, pattern, maxLength, type = 'text',
 }) => (
   <label className="form-input">
     <span className="form-input__label">
@@ -16,6 +16,7 @@ const FormInput = ({
       onChange={onChange}
       required={required}
       pattern={pattern}
+      maxLength={maxLength}
       value={value}
     />
   </label>

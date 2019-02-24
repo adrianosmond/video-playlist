@@ -2,10 +2,7 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0.75rem 3rem 0.75rem 0.5rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  padding: 0.75rem 2.5rem 0.75rem 0.5rem;
   color: var(--color-black);
 }
 
@@ -40,17 +37,23 @@
 .playlist-item__description {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
+  overflow: hidden;
 }
 
 .playlist-item__title {
   font-size: 0.875rem;
   margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .playlist-item__artist {
   font-weight: 300;
   font-size: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .playlist-item__delete {
