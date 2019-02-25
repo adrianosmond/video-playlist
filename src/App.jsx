@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, { useReducer } from 'react';
 
-import {
+import playlistReducer, {
   nextVideoInPlaylist,
   addVideoToPlaylist,
   playVideoByIdx,
   removeVideoFromPlaylist,
   setVideoBrokenStatus,
-} from 'state/reducers/playlistReducer';
+  PLAYLIST_INITIAL_STATE,
+} from 'state/playlistReducer';
 
 import AddToPlaylist from 'containers/AddToPlaylist/AddToPlaylist';
 import Player from 'components/Player/Player';
@@ -15,65 +15,50 @@ import Playlist from 'components/Playlist/Playlist';
 
 import 'App.css';
 
-class App extends Component {
-  videoPlay = () => {
-    const { currentVideo, setVideoBroken } = this.props;
+const App = () => {
+  const [state, dispatch] = useReducer(playlistReducer, PLAYLIST_INITIAL_STATE);
+  const { playingIdx, playlist } = state;
+  const currentVideo = playlist[playingIdx] || {};
+
+  const addVideo = (artist, title, url) => dispatch(addVideoToPlaylist(artist, title, url));
+  const nextVideo = () => dispatch(nextVideoInPlaylist());
+  const playVideo = idx => dispatch(playVideoByIdx(idx));
+  const removeVideo = url => dispatch(removeVideoFromPlaylist(url));
+  const setVideoBroken = (url, isBroken) => dispatch(setVideoBrokenStatus(url, isBroken));
+
+  const videoPlay = () => {
     if (currentVideo.isBroken) {
       setVideoBroken(currentVideo.url, false);
     }
-  }
+  };
 
-  videoEnded = () => {
-    const { nextVideo } = this.props;
-    nextVideo();
-  }
+  const videoEnded = () => nextVideo();
 
-  videoError = () => {
-    const { currentVideo, nextVideo, setVideoBroken } = this.props;
+  const videoError = () => {
     setVideoBroken(currentVideo.url, true);
     nextVideo();
-  }
+  };
 
-  render() {
-    const {
-      playlist, playingIdx, playVideo, addVideo, removeVideo, currentVideo,
-    } = this.props;
-
-    return (
-      <div className="app">
-        <Player
-          url={currentVideo.url}
-          loop={playlist.length === 1}
-          onPlay={this.videoPlay}
-          onEnded={this.videoEnded}
-          onError={this.videoError}
+  return (
+    <div className="app">
+      <Player
+        url={currentVideo.url}
+        loop={playlist.length === 1}
+        onPlay={videoPlay}
+        onEnded={videoEnded}
+        onError={videoError}
+      />
+      <div className="app__body">
+        <Playlist
+          playlist={playlist}
+          playingIdx={playingIdx}
+          playItem={playVideo}
+          removeItem={removeVideo}
         />
-        <div className="app__body">
-          <Playlist
-            playlist={playlist}
-            playingIdx={playingIdx}
-            playItem={playVideo}
-            removeItem={removeVideo}
-          />
-          <AddToPlaylist onAddVideo={addVideo} />
-        </div>
+        <AddToPlaylist onAddVideo={addVideo} />
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-const mapStateToProps = state => ({
-  playingIdx: state.playlist.playingIdx,
-  playlist: state.playlist.playlist,
-  currentVideo: state.playlist.playlist[state.playlist.playingIdx] || {},
-});
-
-const mapDispatchToProps = dispatch => ({
-  addVideo: (artist, title, url) => dispatch(addVideoToPlaylist(artist, title, url)),
-  nextVideo: () => dispatch(nextVideoInPlaylist()),
-  playVideo: idx => dispatch(playVideoByIdx(idx)),
-  removeVideo: url => dispatch(removeVideoFromPlaylist(url)),
-  setVideoBroken: (url, isBroken) => dispatch(setVideoBrokenStatus(url, isBroken)),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

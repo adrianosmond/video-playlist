@@ -1,5 +1,5 @@
 
-const INITIAL_STATE = {
+export const PLAYLIST_INITIAL_STATE = {
   playlist: [],
   playingIdx: 0,
 };
@@ -50,7 +50,7 @@ export const setVideoBrokenStatus = (url, isBroken) => ({
   },
 });
 
-export default function playlistReducer(state = INITIAL_STATE, action) {
+export default function playlistReducer(state, action) {
   switch (action.type) {
     case actionTypes.NEXT_VIDEO_IN_PLAYLIST: {
       let index = state.playingIdx;
